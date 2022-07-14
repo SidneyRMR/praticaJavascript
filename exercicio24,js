@@ -1,0 +1,22 @@
+//Criar função que receba um caracter e verifique quantas veses esse caracter é usado um uma frase
+
+const texto = 'Olá, recrutador! Me ajude a conquistar minha primeira vaga!'
+
+
+//Solução 1
+function contaCaracter(frase, caracter){
+    let count = 0
+    for (i in (frase.split(''))){
+        if (caracter === frase.split('')[i]){
+            count++
+        }
+    }
+    return count
+}
+console.log(contaCaracter(texto, 'o'))
+
+//Solução 2 - professor
+function contaCaracter2(caracterBuscado, frase){
+    return [...frase].filter(caracter => caracter === caracterBuscado).length
+}
+console.log(contaCaracter2('e', texto))
